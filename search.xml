@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java类与对象]]></title>
+    <url>%2F2019%2F10%2F18%2FJava%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[数组]]></title>
     <url>%2F2019%2F10%2F18%2F%E6%95%B0%E7%BB%84%2F</url>
     <content type="text"><![CDATA[#数组 ##一维数组定义 123456格式1：&lt;类型&gt; &lt;数组名&gt;[];格式2：&lt;类型&gt;[] &lt;数组名&gt;;int a[];String[] person;int b[100];不能在定义时指定长度 ##创建一维数组对象 123数组名 = new 元素类型 [元素个数];int[] Arry = new int[100]; ##数组初始化 ###静态初始化 1int[] Arry = &#123;1,2,3,4&#125; ###动态初始化 12345678int a[] = new int[3];a[0]=1; a[1]=5; a[2]=3;引用类型也可初始化Point[] Pa = new Point[3];Pa[0] = new Point(1,2);Pa[1] = new Point(1,4);Pa[2] = new Point(3,9); ##多维数组 123456格式1：&lt;类型&gt; &lt;数组名&gt;[][];格式2：&lt;类型&gt;[][] &lt;数组名&gt;;int a[][];String[][] person;int b[100][100];不能在定义时指定长度 ##创建二维数组对象 123数组名 = new 元素类型 [元素个数][元素个数];int[][] a = new int[2][3]; ##数组初始化 ###静态初始化 123String[][] alphabet = &#123;&#123;&quot;a&quot;,&quot;b&quot;.&quot;c&quot;&#125;,&#123;&quot;d&quot;,&quot;f&quot;,&quot;g&quot;&#125;,&#123;&quot;h&quot;,&quot;y&quot;,&quot;z&quot;&#125;&#125;String[4][3] alphabet = &#123;&#123;&quot;a&quot;,&quot;b&quot;.&quot;c&quot;&#125;,&#123;&quot;d&quot;,&quot;f&quot;,&quot;g&quot;&#125;,&#123;&quot;h&quot;,&quot;y&quot;,&quot;z&quot;&#125;&#125;//初始化不可以指定长度 ###动态初始化 1234567方法一int[][] arr = new int[3][4];方法二int[][] c = new int[3][];c[0] = mew int[3];c[1] = mew int[4];c[2] = mew int[5];]]></content>
