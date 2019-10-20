@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[继承]]></title>
+    <url>%2F2019%2F10%2F19%2F%E7%BB%A7%E6%89%BF%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设置SSH使用hexo deploy时免输用户名和密码]]></title>
     <url>%2F2019%2F10%2F18%2F%E8%AE%BE%E7%BD%AESSH%E4%BD%BF%E7%94%A8hexo-deploy%E6%97%B6%E5%85%8D%E8%BE%93%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81%2F</url>
     <content type="text"><![CDATA[生成SSH秘钥打开命令行工具，任意位置打开 Git Bash Here 然后输入以下命令 1$ cd ~/.ssh 使用 ssh-keygen 生成密钥1234$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;# Creates a new ssh key using the provided emailGenerating public/private rsa key pair.Enter file in which to save the key (/home/you/.ssh/id_rsa): 使用默认的文件名直接enter，接下来显示如下 12Enter passphrase (empty for no passphrase): [Type a passphrase]Enter same passphrase again: [Type passphrase again] 按提示输入密码即可（简化流程的话在键入命令ssh-keygen -t rsa -C “your_email@example.com“ 以后的三次提示输入都可以直接回车跳过）。 密钥生成成功 1234Your identification has been saved in /home/you/.ssh/id_rsa.Your public key has been saved in /home/you/.ssh/id_rsa.pub.The key fingerprint is:…………………此处是密钥内容…………………… your_email@example.com 设置Github 项目的 Deploy keys可以选择是在用户设置中添加密钥（Settings –&gt; SSH GPG keys）还是单个项目中添加密钥，在这里我就在我们的博客项目中添加密钥，此处以我的博客为例。在 caser04255.github.io 的首页菜单栏中点击 Settings –&gt; Deploy keys –&gt; Add deploy key，然后将生成的 id_rsa.pub 中的内容全选复制到 key 输入框中，然后点击 Add key 完成添加公钥。 接下来测试配置是否成功 1ssh -T git@github.com 如果出现以下内容即表示配置完成并且成功！ 12Hi username! You&apos;ve successfully authenticated, but GitHub does notprovide shell access. 设置博客提交地址hexo 的配置文件 _config.yml 中的deploy 属性。12345deploy: type: git repo: git@github.com:caser0425/caser0425.github.io.git branch: master message: 将repo改成 git@github.com:username/username.github.io.git 就可以了]]></content>
