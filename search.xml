@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[绑定域名]]></title>
-    <url>%2F2019%2F10%2F22%2F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D-1%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[hexo绑定域名]]></title>
     <url>%2F2019%2F10%2F22%2F%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%2F</url>
-    <content type="text"><![CDATA[hexo域名绑定在hexo blog绑定在github时候，每一次提交生成的静态文件时候，都会重置我在GitHub绑定的自定义域名，后面看了网上资料发现是没有写CNAME文件 创建CNAME文件在hexo/source文件夹下创建一个CAME文件 12# 你的自定义域名www.python365.club 使用hexo g -d 上上传就不用再去GitHub更新自定义域名了。]]></content>
+    <content type="text"><![CDATA[hexo域名绑定在hexo blog绑定在github时候，每一次提交生成的静态文件时候，都会重置我在GitHub绑定的自定义域名，后面看了网上资料发现是没有写CNAME文件 创建CNAME文件在hexo/source文件夹下创建一个CAME文件 12# 你的自定义域名www.python365.club 使用 hexo g -d 上上传就不用再去GitHub更新自定义域名了。]]></content>
       <categories>
         <category>hexo</category>
       </categories>
