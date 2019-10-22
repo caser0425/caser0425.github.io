@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[s]]></title>
+    <url>%2F2019%2F10%2F21%2Fs%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[继承]]></title>
     <url>%2F2019%2F10%2F19%2F%E7%BB%A7%E6%89%BF%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[extendssuper多态抽象类和接口只声明不提供方法的抽象方法： 1abstract &lt;返回值类型&gt; &lt;方法名&gt; ([&lt;形参列表&gt;]); 用abstract修饰的是抽象类 123[访问修饰符] abstract class [类名]&#123; ...&#125; 抽象类特性]]></content>
       <categories>
         <category>Java基础</category>
       </categories>
