@@ -12,9 +12,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[s]]></title>
-    <url>%2F2019%2F10%2F21%2Fs%2F</url>
+    <title><![CDATA[Java常用类]]></title>
+    <url>%2F2019%2F10%2F21%2FJava%E5%B8%B8%E7%94%A8%E7%B1%BB%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Java基础</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[继承]]></title>
