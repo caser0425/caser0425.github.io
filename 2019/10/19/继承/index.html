@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="extendssuper多态抽象类和接口只声明不提供方法的抽象方法： 1abstract &amp;lt;返回值类型&amp;gt; &amp;lt;方法名&amp;gt; ([&amp;lt;形参列表&amp;gt;]);  用abstract修饰的是抽象类 123[访问修饰符] abstract class [类名]&amp;#123;	...&amp;#125;  抽象类特性">
+<meta name="description" content="extendssuper 访问父类的构造函数：可以使用 super() 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。应该注意到，子类一定会调用父类的构造函数来完成初始化工作，一般是调用父类的默认构造函数，如果子类需要调用父类其它构造函数，那么就可以使用 super 函数。 访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。多态抽象类和">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="继承">
 <meta property="og:url" content="https://www.python365.club/2019/10/19/继承/index.html">
 <meta property="og:site_name" content="pluto blog">
-<meta property="og:description" content="extendssuper多态抽象类和接口只声明不提供方法的抽象方法： 1abstract &amp;lt;返回值类型&amp;gt; &amp;lt;方法名&amp;gt; ([&amp;lt;形参列表&amp;gt;]);  用abstract修饰的是抽象类 123[访问修饰符] abstract class [类名]&amp;#123;	...&amp;#125;  抽象类特性">
+<meta property="og:description" content="extendssuper 访问父类的构造函数：可以使用 super() 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。应该注意到，子类一定会调用父类的构造函数来完成初始化工作，一般是调用父类的默认构造函数，如果子类需要调用父类其它构造函数，那么就可以使用 super 函数。 访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。多态抽象类和">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-20T16:05:33.589Z">
+<meta property="og:updated_time" content="2019-10-22T09:16:09.840Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="继承">
-<meta name="twitter:description" content="extendssuper多态抽象类和接口只声明不提供方法的抽象方法： 1abstract &amp;lt;返回值类型&amp;gt; &amp;lt;方法名&amp;gt; ([&amp;lt;形参列表&amp;gt;]);  用abstract修饰的是抽象类 123[访问修饰符] abstract class [类名]&amp;#123;	...&amp;#125;  抽象类特性">
+<meta name="twitter:description" content="extendssuper 访问父类的构造函数：可以使用 super() 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。应该注意到，子类一定会调用父类的构造函数来完成初始化工作，一般是调用父类的默认构造函数，如果子类需要调用父类其它构造函数，那么就可以使用 super 函数。 访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。多态抽象类和">
 
 
 
@@ -388,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  67 字
+                  216 字
                 </span>
               
 
@@ -425,9 +425,12 @@
       
 
       
-        <h2 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h2><h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2><p>只声明不提供方法的抽象方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract &lt;返回值类型&gt; &lt;方法名&gt; ([&lt;形参列表&gt;]);</span><br></pre></td></tr></table></figure>
+        <h2 id="extends"><a href="#extends" class="headerlink" title="extends"></a>extends</h2><h2 id="super"><a href="#super" class="headerlink" title="super"></a>super</h2><ul>
+<li>访问父类的构造函数：可以使用 super() 函数访问父类的构造函数，从而委托父类完成一些初始化的工作。应该注意到，子类一定会调用父类的构造函数来完成初始化工作，一般是调用父类的默认构造函数，如果子类需要调用父类其它构造函数，那么就可以使用 super 函数。</li>
+<li>访问父类的成员：如果子类重写了父类的某个方法，可以通过使用 super 关键字来引用父类的方法实现。<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h2 id="抽象类和接口"><a href="#抽象类和接口" class="headerlink" title="抽象类和接口"></a>抽象类和接口</h2>只声明不提供方法的抽象方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract &lt;返回值类型&gt; &lt;方法名&gt; ([&lt;形参列表&gt;]);</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
 <p>用abstract修饰的是抽象类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] abstract class [类名]&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -574,7 +577,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -585,7 +588,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -596,7 +599,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
