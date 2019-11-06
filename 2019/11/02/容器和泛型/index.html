@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -79,13 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="pluto blog">
-<meta property="og:url" content="https://www.python365.club/categories/hexo/index.html">
+<meta name="description" content="Java容器大致可分为：Set、List、Queue和Map4种，所有的容器类都位于java.util包下，其中的接口及类之间的关系如图1.1所示（实线表示继承，虚线表示实现接口）。    方    法    描    述boolean add(E e)    向容器中添加一个元素boolean addAll(Collection c)      向容器中添加参数中所有的元素 void clear">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="容器和泛型">
+<meta property="og:url" content="https://www.python365.club/2019/11/02/容器和泛型/index.html">
 <meta property="og:site_name" content="pluto blog">
+<meta property="og:description" content="Java容器大致可分为：Set、List、Queue和Map4种，所有的容器类都位于java.util包下，其中的接口及类之间的关系如图1.1所示（实线表示继承，虚线表示实现接口）。    方    法    描    述boolean add(E e)    向容器中添加一个元素boolean addAll(Collection c)      向容器中添加参数中所有的元素 void clear">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.python365.club/.club//image/1.1.jpg">
+<meta property="og:image" content="https://www.python365.club/.club//to/image/1.1.png">
+<meta property="og:updated_time" content="2019-11-03T09:43:41.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pluto blog">
+<meta name="twitter:title" content="容器和泛型">
+<meta name="twitter:description" content="Java容器大致可分为：Set、List、Queue和Map4种，所有的容器类都位于java.util包下，其中的接口及类之间的关系如图1.1所示（实线表示继承，虚线表示实现接口）。    方    法    描    述boolean add(E e)    向容器中添加一个元素boolean addAll(Collection c)      向容器中添加参数中所有的元素 void clear">
+<meta name="twitter:image" content="https://www.python365.club/.club//image/1.1.jpg">
 
 
 
@@ -115,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://www.python365.club/categories/hexo/">
+  <link rel="canonical" href="https://www.python365.club/2019/11/02/容器和泛型/">
 
 
 
 
 
-  <title>分类: hexo | pluto blog</title>
+  <title>容器和泛型 | pluto blog</title>
   
 
 
@@ -140,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -286,105 +294,241 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>hexo<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.python365.club/2019/11/02/容器和泛型/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pluto">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="pluto blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/10/22/绑定域名/" itemprop="url">
-              
-                <span itemprop="name">hexo绑定域名</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">容器和泛型</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-22T16:35:46+08:00" content="2019-10-22">
-          10-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-02T10:54:10+08:00">
+                2019-11-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  724 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/10/18/设置SSH使用hexo-deploy时免输用户名和密码/" itemprop="url">
-              
-                <span itemprop="name">设置SSH使用hexo deploy时免输用户名和密码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-10-18T12:52:58+08:00" content="2019-10-18">
-          10-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/09/01/hexo/" itemprop="url">
-              
-                <span itemprop="name">hexo 常用指令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-01T22:24:27+08:00" content="2019-09-01">
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
+        <p>Java容器大致可分为：Set、List、Queue和Map4种，所有的容器类都位于java.util包下，其中的接口及类之间的关系如图1.1所示（实线表示继承，虚线表示实现接口）。<br><img src="/.club//image/1.1.jpg" alt="接口及类的关系"></p>
+<img src="/.club//to/image/1.1.png" class="[class names]" title="[width=400] [height=300] [title text [alt text]]">
 
 
+<h1 id="方-法-描-述"><a href="#方-法-描-述" class="headerlink" title="方    法    描    述"></a>方    法    描    述</h1><p>boolean add(E e)    向容器中添加一个元素<br>boolean addAll(Collection<? extends E> c)      向容器中添加参数中所有的元素
+void clear()      移除容器中的所有元素
+boolean contains(Object o)     判定此 collection 是否包含指定的元素，有则返回 true
+boolean containsAll(Collection<?> c)    判定此 collection 是否包含指定 collection 中的所有元素，是则返回 true<br>boolean isEmpty()    判定此容器是否为空，是则返回true<br>Iterator<e> iterator()      返回一个Iterator<t>，用来遍历容器中的所有元素<br>boolean remove(Object o)       如果容器中存在此元素，则删除它<br>Boolean removeAll(Collection<?> c)    删除容器c里包含的所有元素，成功删除一个（或以上）元素则返回true
+boolean retainAll(Collection<?> c)      将此Collection与参数c的交集存入此Collection中<br>int size()    返回此 collection 中的元素数目<br>Object[] toArray()    返回包含此 collection 中所有元素的数组</t></e></p>
+<h1 id="Collections实用类"><a href="#Collections实用类" class="headerlink" title="Collections实用类"></a>Collections实用类</h1><h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>List代表长度可变的线性表，Collections的以下方法适用于List类型。</p>
+<ul>
+<li>copy(List&lt;? super T&gt; dest, List&lt;? extends T&gt; src)：将所有元素从一个列表复制到另一个列表。</li>
+<li>fill(List&lt;? super T&gt; list, T obj)：使用指定元素替换指定列表中的所有元素。</li>
+<li>nCopies(int n, T o)：返回由指定对象的n个副本组成的不可修改的列表。</li>
+<li>shuffle(List&lt;?&gt; list)：使用默认随机源对指定列表进行置换。</li>
+<li>sort(List<t> list)：根据元素的自然顺序对指定列表按升序排序。</t></li>
+</ul>
+<h1 id="Comparator接口排序"><a href="#Comparator接口排序" class="headerlink" title="Comparator接口排序"></a>Comparator接口排序</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package org.container;</span><br><span class="line">	import java.util.*;</span><br><span class="line">	class Employee implements Comparable &#123;</span><br><span class="line">		private String name;</span><br><span class="line">		private int salary;</span><br><span class="line">		public Employee(String name, int age) &#123;</span><br><span class="line">			this.name = name;</span><br><span class="line">			this.salary = age;</span><br><span class="line">		&#125;</span><br><span class="line">		public String toString() &#123;</span><br><span class="line">			return &quot;name=&quot; + name + &quot;, &quot; + &quot;salary=&quot; + salary;</span><br><span class="line">		&#125;</span><br><span class="line">		public boolean equals(Object o) &#123;						 // 重写equals()方法</span><br><span class="line">			if (!(o instanceof Employee))</span><br><span class="line">				return false;</span><br><span class="line">		 	Employee employee = (Employee) o;</span><br><span class="line">			if (this.name.equals(employee.name) &amp;&amp; this.salary ==employee.salary)</span><br><span class="line">				return true;</span><br><span class="line">			else</span><br><span class="line">				return false;</span><br><span class="line">		&#125;</span><br><span class="line">		public int hashCode() &#123;							// 重写hashCode()方法</span><br><span class="line">			int result;	</span><br><span class="line">			result = (name == null ? 0 : name.hashCode());</span><br><span class="line">			return result;</span><br><span class="line">		&#125;</span><br><span class="line">		public int compareTo(Object o) &#123;					 	// 重写compareTo()方法</span><br><span class="line">			Employee e = (Employee) o;</span><br><span class="line">			int result = salary &gt; e.salary ? 1 : (salary == e.salary ? 0 : -1);</span><br><span class="line">			if (0 == result) &#123;</span><br><span class="line">				result = name.compareTo(e.name);</span><br><span class="line">			&#125;</span><br><span class="line">			return result;</span><br><span class="line">		&#125;</span><br><span class="line">		public static void main(String[] args) &#123;</span><br><span class="line">			Set&lt;Employee&gt; set = new TreeSet&lt;Employee&gt;();</span><br><span class="line">			set.add(new Employee(&quot;Lucy&quot;, 2800));</span><br><span class="line">			set.add(new Employee(&quot;John&quot;, 4000));</span><br><span class="line">			set.add(new Employee(&quot;Mary&quot;, 3000));</span><br><span class="line">			set.add(new Employee(&quot;Lily&quot;, 3000));</span><br><span class="line">			Iterator&lt;Employee&gt; it = set.iterator();</span><br><span class="line">			while (it.hasNext()) &#123;</span><br><span class="line">				Employee student = it.next();</span><br><span class="line">				System.out.println(student);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="List（列表）"><a href="#List（列表）" class="headerlink" title="List（列表）"></a>List（列表）</h1><p>ArrayList代表长度可变的数组，允许对元素进行随机的快速访问，但是向ArrayList中插入与删除元素的速度较慢。ArrayList是线程不安全的，若要成为线程安全的，可用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list = Collections.synchronizedList(new ArrayList());</span><br></pre></td></tr></table></figure>
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    pluto
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.python365.club/2019/11/02/容器和泛型/" title="容器和泛型">https://www.python365.club/2019/11/02/容器和泛型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/27/二叉树/" rel="next" title="二叉树">
+                <i class="fa fa-chevron-left"></i> 二叉树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/05/异常Exception/" rel="prev" title="异常Exception">
+                异常Exception <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -392,6 +536,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -412,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -495,6 +652,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方-法-描-述"><span class="nav-number">1.</span> <span class="nav-text">方    法    描    述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collections实用类"><span class="nav-number">2.</span> <span class="nav-text">Collections实用类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">2.1.</span> <span class="nav-text">List</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comparator接口排序"><span class="nav-number">3.</span> <span class="nav-text">Comparator接口排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List（列表）"><span class="nav-number">4.</span> <span class="nav-text">List（列表）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -628,6 +801,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
