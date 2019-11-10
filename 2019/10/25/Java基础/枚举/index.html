@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,enum,注解,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="定义枚举Java SE 5.0引入一个新的关键字enum表示枚举类型。定义一个枚举类型很简单，下面是一个枚举类型的示例。 123public enum Season &amp;#123;	  SPRING, SUMMER, AUTUMN, WINTER;&amp;#125;  上面创建了一个名为Season的枚举类型，它有4个成员。由于枚举类型的实例是常量，因此按命名习惯它们都用大写字母表示。为了使用enum，需">
+<meta name="keywords" content="Java,enum,注解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="枚举">
+<meta property="og:url" content="https://www.python365.club/2019/10/25/Java基础/枚举/index.html">
+<meta property="og:site_name" content="pluto blog">
+<meta property="og:description" content="定义枚举Java SE 5.0引入一个新的关键字enum表示枚举类型。定义一个枚举类型很简单，下面是一个枚举类型的示例。 123public enum Season &amp;#123;	  SPRING, SUMMER, AUTUMN, WINTER;&amp;#125;  上面创建了一个名为Season的枚举类型，它有4个成员。由于枚举类型的实例是常量，因此按命名习惯它们都用大写字母表示。为了使用enum，需">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-26T15:22:45.849Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="枚举">
+<meta name="twitter:description" content="定义枚举Java SE 5.0引入一个新的关键字enum表示枚举类型。定义一个枚举类型很简单，下面是一个枚举类型的示例。 123public enum Season &amp;#123;	  SPRING, SUMMER, AUTUMN, WINTER;&amp;#125;  上面创建了一个名为Season的枚举类型，它有4个成员。由于枚举类型的实例是常量，因此按命名习惯它们都用大写字母表示。为了使用enum，需">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://www.python365.club/2019/10/25/Java基础/枚举/">
+
+
+
+
+
+  <title>枚举 | pluto blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">pluto blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.python365.club/2019/10/25/Java基础/枚举/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="pluto">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="pluto blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">枚举</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-25T23:51:36+08:00">
+                2019-10-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="定义枚举"><a href="#定义枚举" class="headerlink" title="定义枚举"></a>定义枚举</h1><p>Java SE 5.0引入一个新的关键字enum表示枚举类型。定义一个枚举类型很简单，下面是一个枚举类型的示例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum Season &#123;</span><br><span class="line">	  SPRING, SUMMER, AUTUMN, WINTER;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面创建了一个名为Season的枚举类型，它有4个成员。<br>由于枚举类型的实例是常量，因此按命名习惯它们都用大写字母表示。<br>为了使用enum，需要创建一个该类型的引用，并将其赋值给某个实例。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Season season = season.SUMMER;</span><br></pre></td></tr></table></figure>
+
+<h2 id="枚举方法"><a href="#枚举方法" class="headerlink" title="枚举方法"></a>枚举方法</h2><p>在创建一个enum的实例后，编译器会自动创建一些有用的方法。<br>ordinal()方法用来返回某个特定enum常量的索引；values()方法用来按照enum常量的声明顺序产生由这些常量值构成的数组。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (Season season : Season.values()) &#123;</span><br><span class="line">	System.out.println(season+&quot;,ordinal &quot;+season.ordinal());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="枚举enum构造方法"><a href="#枚举enum构造方法" class="headerlink" title="枚举enum构造方法"></a>枚举enum构造方法</h1><p>枚举像类一样也可以有构造方法，这样在定义其成员变量时就可以用构造方法来进行初始化。</p>
+<ul>
+<li>在定义枚举时，必须将枚举常量定义在最前面，并以分号“;”与其他成员隔开。</li>
+<li>若enum是public类型且在类外部定义，则文件名必须与enum的名字相同，且文件中不能再定义其他public类型的类。<br><label style="color:red">enum的构造方法必须是private，否则出错。</label><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Orientation.java</span><br><span class="line">package org.enums;</span><br><span class="line">public enum Orientation &#123;</span><br><span class="line">	EAST(&quot;shanghai&quot;),SOUTH(&quot;shenzhen&quot;),WEST(&quot;xian&quot;),NORTH(&quot;beijing&quot;);</span><br><span class="line">	private String city;</span><br><span class="line">	Orientation(String city) &#123;		// enum的构造方法，编译程序自动加上private修饰符</span><br><span class="line">		this.city = city;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getCity() &#123;			// enum的普通方法</span><br><span class="line">		return city;</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Orientation or1 = Orientation.EAST;</span><br><span class="line">		Orientation or2 = Orientation.SOUTH;</span><br><span class="line">		Orientation or3 = Orientation.WEST;</span><br><span class="line">		Orientation or4 = Orientation.NORTH;</span><br><span class="line">		System.out.println(or1.getCity());</span><br><span class="line">		System.out.println(or2.getCity());</span><br><span class="line">		System.out.println(or3.getCity());</span><br><span class="line">		System.out.println(or4.getCity());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="EnumMap方法"><a href="#EnumMap方法" class="headerlink" title="EnumMap方法"></a>EnumMap方法</h1><p>EnumMap是一种特殊的Map，它要求所有的键（Key）都必须来自同一个枚举，该枚举在创建EnumMap时显式或隐式地指定。EnumMap在内部表示为<label style="color:red"> 数组 </label>，这种表示形式非常紧凑且高效，故可放心地使用enum实例在EnumMap中进行查找。不过，只能将enum实例作为键来调用<label style="color:red"> put()方法 </label>，其他操作与使用一般的Map差不多。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package test;</span><br><span class="line"></span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">enum Size&#123;</span><br><span class="line">    Small,Medium,Large;</span><br><span class="line">&#125;</span><br><span class="line">public class EnumMap &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        /**</span><br><span class="line">         *  创建一个键类型为枚举Size的空枚举映射，键对象为枚举Size型，</span><br><span class="line">         * 		值对象为Integer型，参数为键类型的Class对象</span><br><span class="line">         */</span><br><span class="line">        Map&lt;Size,Integer&gt; map = new java.util.EnumMap&lt;Size, Integer&gt;(Size.class);</span><br><span class="line">        map.put(Size.Small,36);</span><br><span class="line">        map.put(Size.Medium,40);</span><br><span class="line">        map.put(Size.Large,42);</span><br><span class="line">        for (Size size: Size.values())&#123;</span><br><span class="line">            System.out.println(map.get(size));</span><br><span class="line">        &#125;</span><br><span class="line">        for (int value:map.values())&#123;</span><br><span class="line">            System.out.println(value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">36</span><br><span class="line">40</span><br><span class="line">42</span><br><span class="line">36</span><br><span class="line">40</span><br><span class="line">42</span><br></pre></td></tr></table></figure>
+
+<h1 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h1><p>在程序中使用注解的优点有：</p>
+<ul>
+<li>提供了一种结构化的、且具有类型检查能力的新途径，以编写更为健壮的代码。</li>
+<li>通过使用注解，程序员可以在不改变源程序逻辑的情况下为代码加入元数据。</li>
+<li>用于附属文件的自动生成，例如部署描述符或bean信息类。</li>
+<li>用于测试、日志、事务语义等代码的生成。</li>
+<li>按产生方式和功能的不同，Java程序的注解可分为内置注解、自定义注解和元注解。</li>
+</ul>
+<h2 id="内置注解"><a href="#内置注解" class="headerlink" title="内置注解"></a>内置注解</h2><p>内置注解是指Java语言内部已定义好的注解，可直接使用。Java SE 5.0预定义了3种标准注解（在java.lang包中），如下：</p>
+<ul>
+<li>@Override：表示当前的方法将重写父类中的方法。如果不小心拼写错误或者签名对不上父类的方法，编译器就会发出错误提示。</li>
+<li>@Deprecated：表示某个程序元素（类、方法等）已过时。当其他程序使用已过时的类、方法时，编译器将会发出警告。</li>
+<li>@SuppressWarnings：关闭指定的编译器警告信息。</li>
+</ul>
+<h3 id="重写-Override"><a href="#重写-Override" class="headerlink" title="重写@Override"></a>重写@Override</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package test;</span><br><span class="line"></span><br><span class="line">class Person &#123;</span><br><span class="line">    String name;</span><br><span class="line">    int age;</span><br><span class="line"></span><br><span class="line">    Person(String str, int i) &#123;</span><br><span class="line">        name = str;</span><br><span class="line">        age = i;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override						// 重写从Object类继承过来的equals()方法</span><br><span class="line">    public boolean equals(Object obj) &#123;</span><br><span class="line">        Person p = null;</span><br><span class="line">        if (obj instanceof Person)</span><br><span class="line">            p = (Person) obj;</span><br><span class="line">        else</span><br><span class="line">            return false;</span><br><span class="line">        if (p.name == this.name &amp;&amp; p.age == this.age)</span><br><span class="line">            return true;</span><br><span class="line">        else</span><br><span class="line">            return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class OverrideTest &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Person p1 = new Person(&quot;Tom&quot;, 18);</span><br><span class="line">        Person p2 = new Person(&quot;Tom&quot;, 18);</span><br><span class="line">        System.out.println(p1.equals(p2));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Deprecated"><a href="#Deprecated" class="headerlink" title="@Deprecated"></a>@Deprecated</h3><p>父类的方法不想用的时候可以用@deprecated取消</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class DeprecatedTest extends Service &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void doSomething()&#123;</span><br><span class="line">        System.out.println(&quot;do something in DeprecateTest class&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        DeprecatedTest sub = new DeprecatedTest();</span><br><span class="line">        sub.doSomething();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Service&#123;</span><br><span class="line">    @Deprecated</span><br><span class="line">    public void doSomething()&#123;</span><br><span class="line">        System.out.printf(&quot;do something&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是含有标记@Deprecated的类仍然可以被JVM执行。程序运行结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">do something in DeprecatedTest class</span><br></pre></td></tr></table></figure>
+
+<h3 id="SuppreessWarnings"><a href="#SuppreessWarnings" class="headerlink" title="SuppreessWarnings"></a>SuppreessWarnings</h3><p>@SuppressWarnings用于有选择地关闭编译器对类、方法、成员变量、变量初始化的警告，这类警告并不一定表示程序错误。例如，当使用一个容器类又没有提供它的类型时，编译器将发出“unchecked warning”警告，通常这种情况需要查看引起警告的代码，若它真的错了当然要纠正；但有时代码并无错，又无法避免这种警告，此时@SuppressWarnings就派上用场了，在调用的方法前增加该注解告诉编译器停止对此方法的警告。<br>下面的方法f()中定义了一个ArrayList类，但同时会出现警告信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void f() &#123;</span><br><span class="line">    List list = new ArrayList();</span><br><span class="line">    list.add(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>警告信息表示List类必须使用泛型才是安全的，为消除警告须将这个方法作如下改写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public void f() &#123;</span><br><span class="line">	List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span><br><span class="line">	list.add(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但如果实际的程序并无很高的安全需求，如此写法就显得烦冗，可又不想看到警告信息，于是使用@SuppressWarnings注解，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@SuppressWarnings (value = &#123;&quot;unchecked&quot;&#125;)</span><br><span class="line">public void f() &#123;</span><br><span class="line">	List list = new ArrayList();</span><br><span class="line">	list.add(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>与@Override和@Deprecated注解不同，@SuppressWarnings有一个类型为String[]的元素。注解的语法允许在注解名后跟括号，括号中是使用逗号分隔的“name = value”对，用来为注解的成员赋值。按照约定，单一元素（只有一个元素）的名字建议取为“value”，而这里@SuppressWarnings类型只定义了一个单一成员，故只有一个简单的“value = {…}”作为“name = value”对，这种情况还可更进一步省去“value =”，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@SuppressWarnings(&#123;&quot;unchecked&quot;,&quot;deprecation&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>由于成员值是一个数组，故使用大括号来声明数组值。<br>当@SuppressWarnings所声明的被禁止警告个数为1时，还可省去大括号，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@SuppressWarnings(&quot;unchecked&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class SuppressWarningTest &#123;</span><br><span class="line">    @SuppressWarnings(&quot;unchecked&quot;)</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Map map = new TreeMap();</span><br><span class="line">        map.put(&quot;hello&quot;, LocalDateTime.now());</span><br><span class="line">        System.out.println(map.get(&quot;hello&quot;));</span><br><span class="line">        List list = new ArrayList();</span><br><span class="line">        list.add(&quot;annotation&quot;);</span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h2><p>注解类型的定义可看作是一种特殊的接口定义，只是在interface关键字前加了一个@符号。编译器在编译注解的定义时，会自动从java.lang.annotation.Annotation接口继承该注解，故不必（也不允许）在注解定义语句后边再加extends子句。<br>可以按如下方式使用自定义的注解MyAnnotation：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@MyAnnotation(id = 12, value = &quot;java&quot;) </span><br><span class="line">public void f() &#123; … &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>Java 8在java.lang.annotation包下提供了6个元注解，具体如下。</p>
+<ul>
+<li>@Target：指定被修饰的注解能用于哪些程序元素类型。其参数ElementType表示所适用的元素类型，取值有：CONSTRUCTOR（构造器）、FIELD（成员变量）、LOCAL_VARIABLE（局部变量）、METHOD（方法）、PACKAGE（包）、PARAMETER（参数）、TYPE（类、接口、注解类型或枚举），以及ANNOTATION_TYPE（标准注解）。</li>
+<li>@Retention：指定被修饰注解的保存级别。其参数RetentionPolicy表示保存级别，取值有：SOURCE（只保留在源代码中，编译器直接丢弃这种注解）、CLASS（保存在class文件中，但运行时JVM不可获取注解信息）、RUNTIME（保存在class文件中且运行时JVM也可获取注解信息），默认保存级别为CLASS。</li>
+<li>@Documented：指定被修饰的注解将被javadoc工具提取成文档。</li>
+<li>@Inherited：指定被修饰的注解（这里假设为@Xxx）具有继承性，即如果某个类使用了@Xxx注解，则其子类也将自动被@Xxx修饰。</li>
+<li>@Repeatable：用于定义Java 8新增的重复注解。</li>
+</ul>
+<h3 id="1．-Target"><a href="#1．-Target" class="headerlink" title="1．@Target"></a>1．@Target</h3><p>@Target描述了被修饰注解所适用的程序元素的种类。当一个注解没有被@Target修饰时可适用于所有的程序元素；而当存在@Target时编译器会强制实施指定的类型限制。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Target(ElementType.METHOD) </span><br><span class="line">@interface MyAnnotation &#123;&#125;</span><br><span class="line">@MyAnnotation 				// 不正确，不能为类注解</span><br><span class="line">public class Comment &#123;</span><br><span class="line">	@MyAnnotation  				// 正确，可以为方法注解</span><br><span class="line">	public void method()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2．-Retention"><a href="#2．-Retention" class="headerlink" title="2．@Retention"></a>2．@Retention</h3><p>@Retention定义了注解信息被保留的时间长短，支持三种不同保存级别，写法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* 只保留在源代码中，被编译器丢弃 */</span><br><span class="line">@Retention(RetentionPolicy.SOURCE) @interface MyAnnotation1 &#123;&#125;</span><br><span class="line">/* 保存在class文件中，但JVM无法获取 */</span><br><span class="line">@Retention(RetentionPolicy.CLASS) @interface MyAnnotation2 &#123;&#125;</span><br><span class="line">/* 保存在class文件中，且JVM可以获取 */</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME) @interface MyAnnotation3 &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3．-Documented"><a href="#3．-Documented" class="headerlink" title="3．@Documented"></a>3．@Documented</h3><p>@Documented注解和它的名字一样与文档有关。在默认情况下使用javadoc或其他类似工具自动生成文档时，源程序中的注解将被忽略掉。如果想在文档中也包含注解，就必须使用@Documented修饰想要包含的注解。</p>
+<h3 id="4．-Inherited"><a href="#4．-Inherited" class="headerlink" title="4．@Inherited"></a>4．@Inherited</h3><p>@Inherited表示注解类型会被自动继承。当一个使用@Inherited修饰的注解被用于一个类时，它也将被自动地用于该类的所有子类。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Inherited </span><br><span class="line">@interface MyAnnotation &#123;&#125;</span><br><span class="line">@MyAnnotation</span><br><span class="line">public class ParentClass &#123;&#125;</span><br><span class="line">public class ChildClass extends ParentClass &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在以上代码中，ChildClass和ParentClass一样都已被MyAnnotation注解了。</p>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p> 新的语法元素和操作符 “–&gt;”，也叫lambda操作符或箭头操作符<br>它分为两个部分：左边指定lambda表达式需要的所有参数，右边指定lambda体，即lambda表达式要执行的动作。<br>Java 8 指定两种lambda体，一种只包含单独一个表达式，一种包含一个代码块。</p>
+<p>首先看一个最简单的lambda表达式，它的计算结果是一个常量值，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">()-&gt;274.83</span><br></pre></td></tr></table></figure>
+
+<p>这个lambda表达式没有参数，所以参数列表为空，它返回常量值274.83。因此，这个表达式的作用类似于下面的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">double myVal() &#123; return 274.83; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，lambda表达式定义的方法没有名称。<br>当lambda表达式需要参数时，就要在操作符左侧的参数列表中加以指定。下面是一个简单的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(value)-&gt;(value % 2) == 0</span><br></pre></td></tr></table></figure>
+
+<p>如果参数value的值是偶数，这个lambda表达式会返回true。</p>
+<h2 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h2><h3 id="1）定义和使用函数式接口"><a href="#1）定义和使用函数式接口" class="headerlink" title="(1）定义和使用函数式接口"></a>(1）定义和使用函数式接口</h3><p>定义函数式接口只能为其声明一个方法，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface MyVal &#123;</span><br><span class="line">	double getValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中，getValue()方法隐式地是抽象方法且是MyVal定义的唯一方法。</p>
+<p>下面通过一个例子来说明如何在参数上下文中使用lambda表达式。首先，声明对函数式接口MyVal的一个引用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MyVal myVal;</span><br></pre></td></tr></table></figure>
+
+<p>接下来，将一个lambda表达式赋给该引用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myVal = ()-&gt;274.83;</span><br></pre></td></tr></table></figure>
+
+<p>当目标类型上下文中出现lambda表达式时，会自动创建实现了函数式接口的一个类的实例，函数式接口声明的抽象方法的行为由lambda表达式定义。当通过目标调用该方法时就会执行lambda表达式。可见，lambda表达式提供了一种将代码段转换为对象的方式。上例中的lambda表达式成了getValue()方法的实现。因此，下面的代码执行将显示274.83：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(myVal.getValue());</span><br></pre></td></tr></table></figure>
+
+<p>使用lambda表达式实现自定义函数式接口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyIntPredicate.java</span><br><span class="line">package org.lambda;</span><br><span class="line">@FunctionalInterface	// Java 8新增注解，指定检查该接口必须是函数式接口</span><br><span class="line">public interface MyIntPredicate &#123;		// 自定义的函数式接口</span><br><span class="line">	boolean test(int value);		// 唯一（只能有一个！）的抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package org.lambda;</span><br><span class="line">public class LambdaDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int n = Integer.parseInt(args[0]);</span><br><span class="line">		MyIntPredicate isEven = (value)-&gt;(value % 2) == 0;	// 用lambda表达式实现接口</span><br><span class="line">		if(isEven.test(n))		// 调用接口方法返回值判断奇偶数</span><br><span class="line">			System.out.println(n + &quot;是偶数&quot;);</span><br><span class="line">		else</span><br><span class="line">			System.out.println(n + &quot;是奇数&quot;);		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="（2）使用Java-8预定义的接口"><a href="#（2）使用Java-8预定义的接口" class="headerlink" title="（2）使用Java 8预定义的接口"></a>（2）使用Java 8预定义的接口</h3><p>Java 8在java.util.function包下预定义了大量函数式接口，典型地包含如下4类。</p>
+<ul>
+<li>XxxFunction：这类接口中通常包含一个apply()抽象方法对参数进行处理、转换（apply()方法的处理逻辑由lambda表达式来实现），然后返回一个值。</li>
+<li>XxxConsumer：这类接口中通常包含一个accept()抽象方法，它与XxxFunction接口的apply()方法基本相似，也负责对参数进行处理，只是该方法不会返回处理的结果。</li>
+<li>XxxxPredicate：这类接口中通常包含一个test()抽象方法，该方法用来对参数进行某种判断（其判断逻辑也由lambda表达式实现），然后返回一个boolean值。</li>
+<li>XxxSupplier：这类接口中通常包含一个getAsXxx()抽象方法，此方法不需要输入参数，它会按某种逻辑算法（算法当然也是lambda表达式实现的）返回一个数据。</li>
+</ul>
+<p>用Java 8预定义的函数式接口实现奇偶数判断。<br>FuncInterfaceDemo.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package org.lambda;</span><br><span class="line">import java.util.function.*;				// 导入包含预定义接口的包</span><br><span class="line">public class FuncInterfaceDemo &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int n = Integer.parseInt(args[0]);</span><br><span class="line">		IntPredicate isEven = (value)-&gt;(value % 2) == 0; // lambda表达式实现预定义接口</span><br><span class="line">		if(isEven.test(n))</span><br><span class="line">			System.out.println(n + &quot;是偶数&quot;);</span><br><span class="line">		else</span><br><span class="line">			System.out.println(n + &quot;是奇数&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Lambda表达式与匿名内部类"><a href="#Lambda表达式与匿名内部类" class="headerlink" title="Lambda表达式与匿名内部类"></a>Lambda表达式与匿名内部类</h2><h2 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h2><p>用lambda表达式引用StringBuffer类中的方法，实现字符串反序输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">MyStrBufFunction.java</span><br><span class="line">package org.lambda;</span><br><span class="line">public interface MyStrBufFunction &#123;		// 定义函数式接口</span><br><span class="line">	StringBuffer reverse(StringBuffer str);	// 抽象方法（用于字符串反转的功能）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    pluto
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.python365.club/2019/10/25/Java基础/枚举/" title="枚举">https://www.python365.club/2019/10/25/Java基础/枚举/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/enum/" rel="tag"># enum</a>
+          
+            <a href="/tags/注解/" rel="tag"># 注解</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/22/JQuery/" rel="next" title="JQuery">
+                <i class="fa fa-chevron-left"></i> JQuery
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/27/二叉树/" rel="prev" title="二叉树">
+                二叉树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">pluto</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.yourname.com/about/" target="_blank" title="微信">
+                      
+                        <i class="fa fa-fw fa-weixin"></i>微信</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定义枚举"><span class="nav-number">1.</span> <span class="nav-text">定义枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举方法"><span class="nav-number">1.1.</span> <span class="nav-text">枚举方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举enum构造方法"><span class="nav-number">2.</span> <span class="nav-text">枚举enum构造方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EnumMap方法"><span class="nav-number">3.</span> <span class="nav-text">EnumMap方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注解"><span class="nav-number">4.</span> <span class="nav-text">注解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置注解"><span class="nav-number">4.1.</span> <span class="nav-text">内置注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重写-Override"><span class="nav-number">4.1.1.</span> <span class="nav-text">重写@Override</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deprecated"><span class="nav-number">4.1.2.</span> <span class="nav-text">@Deprecated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SuppreessWarnings"><span class="nav-number">4.1.3.</span> <span class="nav-text">SuppreessWarnings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义注解"><span class="nav-number">4.2.</span> <span class="nav-text">自定义注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元注解"><span class="nav-number">4.3.</span> <span class="nav-text">元注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1．-Target"><span class="nav-number">4.3.1.</span> <span class="nav-text">1．@Target</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2．-Retention"><span class="nav-number">4.3.2.</span> <span class="nav-text">2．@Retention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3．-Documented"><span class="nav-number">4.3.3.</span> <span class="nav-text">3．@Documented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4．-Inherited"><span class="nav-number">4.3.4.</span> <span class="nav-text">4．@Inherited</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">4.4.</span> <span class="nav-text">Lambda表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式接口"><span class="nav-number">4.5.</span> <span class="nav-text">函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）定义和使用函数式接口"><span class="nav-number">4.5.1.</span> <span class="nav-text">(1）定义和使用函数式接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）使用Java-8预定义的接口"><span class="nav-number">4.5.2.</span> <span class="nav-text">（2）使用Java 8预定义的接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda表达式与匿名内部类"><span class="nav-number">4.6.</span> <span class="nav-text">Lambda表达式与匿名内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法引用"><span class="nav-number">4.7.</span> <span class="nav-text">方法引用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">pluto</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
