@@ -1,0 +1,90 @@
+<p>ʹ��@RequestMapping ע��ӳ������·��<br> ��<br>�����ʹ��@RequestMappingע����������URLӳ�䵽��������</p>
+<p>��ĳ���ض��ķ����ϣ���@RequestMapping �ȿ��Զ��������ϣ�</p>
+<p>Ҳ���Զ��巽����</p>
+<p>һ����˵���༶���ע�⸺��һ���ض��������ĳ��ģʽ��������</p>
+<p>·��ӳ�䵽һ���������ϣ�ͬʱͨ�����������ע����ϸ��ӳ�䣬��</p>
+<p>�����ض���HTTP���󷽷���GET��POST �����ȣ���HTTP��������</p>
+<p>��Я���ض�������������������ӳ�䵽ƥ��ķ�����</p>
+<p>�������÷�����</p>
+<p>��1��ӳ�䵥��URL</p>
+<p>@RequestMapping(“”) �� @RequestMapping(value=””)</p>
+<p>��2��ӳ����URL</p>
+<p>@RequestMapping({“”,””}) �� @RequestMapping(value={“”,””})</p>
+<p>·����ͷ�Ƿ��б��/���ɣ�������ϣ��磺@RequestMapping(“/hello”)</p>
+<p>@RequestMapping һ��������ӳ�䷽ʽ��</p>
+<p>1����׼URL ӳ��</p>
+<p>��׼URL ӳ������򵥵�һ��ӳ�䣬���磺</p>
+<p>@RequestMapping(“/hello”)</p>
+<p>��</p>
+<p>@RequestMapping({“/hello”,”/world”})</p>
+<p>2��Ant ���� URL ӳ��</p>
+<p>Ant ͨ��������֣�</p>
+<p>ͨ���</p>
+<p>˵��</p>
+<p>?</p>
+<p>ƥ���κε��ַ�</p>
+<p>*</p>
+<p>ƥ�������������ַ����� 0 ����</p>
+<p>**</p>
+<p>ƥ������������Ŀ¼���� 0 ����</p>
+<p>���磺</p>
+<p>��1��@RequestMapping(“/?/hello/“)</p>
+<p>��2��@RequestMapping(“/*/hello”)</p>
+<p>��3��@RequestMapping(“/**/hello”)</p>
+<p>3��ռλ��URL ӳ��</p>
+<p>URL �п���ͨ��һ������ {} ռλ��ӳ��</p>
+<p>���磺@RequestMapping(“/user/{userId}/show”)</p>
+<p>����ͨ��@PathVariable(“”) ע�⽫ռλ���е�ֵ�󶨵�����������</p>
+<p>/**</p>
+<ul>
+<li><p>��� URL �е� userId �Ǵ����֣���ôʹ�� @PathVariable</p>
+</li>
+<li><p>����ʱ�����Ը����Լ������󽫷���������������Ϊ Long��</p>
+</li>
+<li><p>Integer��String</p>
+</li>
+</ul>
+<p>*/</p>
+<p>@RequestMapping(“/user/{userId}/show”)</p>
+<p>public ModelAndView show(@PathVariable(“userId”) Long userId) {</p>
+<p>// ���� ModelAndView ���󣬲�������ͼ����</p>
+<p>ModelAndView mv = new ModelAndView(“show”);</p>
+<p>// ����ģ������</p>
+<p>mv.addObject(“msg”, “User ID��” + userId);</p>
+<p>return mv;</p>
+<p>}</p>
+<p>ע�⣺@PathVariable(“”) ���ܼ�дΪ @PathVariable����Ϊ��</p>
+<p>��������ʱ��Java �෴����󲻰��������Ĳ������ơ�����ڱ�</p>
+<p>��ʱ��Debug �򿪣�javac -debug=no���������Ĳ������Ʋ�</p>
+<p>���¼�����У���ʱ���ܼ�д�����������д��</p>
+<p>����ʱ����Debug �ķ�����</p>
+<p>��Eclipse��Project-&gt;Properties-&gt;Java Compiler����ѡ��</p>
+<p>Add variable attributes to generated class files �� ����</p>
+<p>4���������󷽷���URL ӳ��</p>
+<p>��HTTP ��������õ����󷽷��� GET��POST������������</p>
+<p>һЩ�������磺DELET��PUT��HEAD ��</p>
+<p>�������󷽷������磺</p>
+<p>@RequestMapping(value=”/hello”, method=RequestMethod.POST)</p>
+<p>�������ƶ�����󷽷����Դ����Ű�Χ�����Ÿ������ɣ����磺</p>
+<p>method={RequestMethod.GET,RequestMethod.POST}</p>
+<p>5���������������URL ӳ��</p>
+<p>�������������ӳ��URL�����磺</p>
+<p>@RequestMapping(value=”/user/show”, params=”userId”)</p>
+<p>�������б������userId ����</p>
+<p>���������ƹ������£�</p>
+<p>��1��params=”userId” ��������б������ userId</p>
+<p>��2��params=”!userId” ��������в��ܰ��� userId</p>
+<p>��3��params=”userId!=1” ��������б������ userId��������Ϊ 1</p>
+<p>��4��params={“userId”,”userName”} ������� userId �� userName ����</p>
+<p>����ͨ��@RequestParam(“”) ע�⽫��������󶨵�����������</p>
+<p>@RequestMapping(value=”/user/show”,params=”userId”)</p>
+<p>public ModelAndView show(@RequestParam(“userId”) Long userId) {</p>
+<p>// ���� ModelAndView ���󣬲�������ͼ����</p>
+<p>ModelAndView mv = new ModelAndView(“show”);</p>
+<p>// ����ģ������</p>
+<p>mv.addObject(“msg”, “User ID��” + userId);</p>
+<p>return mv;</p>
+<p>}</p>
+<p>Ҫע��@PathVariable(“”) �� @RequestParam(“”) �Ĳ�ͬ��</p>
+<p>@PathVariable(“”) �ǽ� URL ��ռλ������ֵ�󶨵�����������</p>
+<p>@RequestParam(“”) �ǽ� URL �����������󶨵�����������</p>

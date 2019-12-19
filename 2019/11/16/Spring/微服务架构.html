@@ -1,0 +1,30 @@
+<h2 id="����֧�����"><a href="#����֧�����" class="headerlink" title="����֧�����"></a>����֧�����</h2><ol>
+<li>�������� Zuul</li>
+<li>����ע�ᷢ�� Eureka+Ribbon</li>
+<li>������������ Apollo</li>
+<li>��֤��Ȩ���� Spring Security OAuth2</li>
+<li>������ Spring MVC/Boot</li>
+</ol>
+<h2 id="��ط������"><a href="#��ط������" class="headerlink" title="��ط������"></a>��ط������</h2><p>1 �������� Kafka<br>2 ��־��� ELK<br>3 ��������� CAT<br>4 Metrics ��� KairosDB<br>5 �������͸澯 ZMon<br>6 �����۶Ϻ����ۺ� Hystrix/Turbine</p>
+<p><strong>spring-boot-starter-actuator  ʹ��Spring Boot��Actuator�����ų������ṩ�������������ܣ��ɰ��������Ӻ͹���Ӧ��</strong></p>
+<p>spring-boot-admin-starter-client</p>
+<h2 id="Feign������Ribbon"><a href="#Feign������Ribbon" class="headerlink" title="Feign������Ribbon"></a>Feign������Ribbon</h2><p>����Ribbonά����MicroServiceCloud-Dept�ķ����б���Ϣ,����ͨ����ѯʵ���˿ͻ��˵ĸ��ؾ���.����Ribbon��ͬ����,ͨ��feignֻ��Ҫ�������󶨽ӿ���������ʽ�ķ���,���Ŷ��򵥵�ʵ���˷������</p>
+<h2 id="dependencies��dependencyManagement������"><a href="#dependencies��dependencyManagement������" class="headerlink" title="dependencies��dependencyManagement������"></a>dependencies��dependencyManagement������</h2><p>ͳһ������Ŀ�İ汾�ţ�ȷ��Ӧ�õĸ�����Ŀ�������Ͱ汾һ�£����ܱ�֤���Եĺͷ���������ͬ�ĳɹ�����ˣ��ڶ���pom�ж��干ͬ��������ϵ��<br>ͬʱ���Ա�����ÿ��ʹ�õ�����Ŀ�ж�����һ���汾�ţ����������������л�����һ���汾ʱ��ֻ��Ҫ�ڸ�����������£�����Ҫ�κ�һ������Ŀ���޸ģ�<br>���ĳ������Ŀ��Ҫ����һ���汾��ʱ��ֻ��Ҫ��dependencies������һ���汾�ż��ɡ�����ͻ�ʹ�����������İ汾�ţ����̳��ڸ���汾�š�</p>
+<p>Eureka�ɶ��instance(����ʵ��)��ɣ���Щ����ʵ�����Է�Ϊ���֣�<strong>Eureka Server��Eureka Client</strong>��<br>Ϊ�˱������⣬���ǽ�Eureka client�ٷ�Ϊ<strong>Service Provider��Service Consumer</strong>��<br>Eureka Server�������ע�����ģ�����ά��ע��ķ����б���<br>Service Provider�������ṩ������Ϊһ��Eureka Client����Eureka Server������ע�ᡢ��Լ�����ߵȲ�����ע�����Ҫ���ݰ���������������ip���˿ںš������ȵȡ�<br>Service Consumer���������ѷ�����Ϊһ��Eureka Client����Eureka Server��ȡService Provider��ע����Ϣ����ͨ��Զ�̵�����Service Provider����ͨ�š�</p>
+<p>Eureka Server��Ϊһ�������Ĳ���Ԫ����REST API����ʽΪ����ʵ���ṩ��ע�ᡢ�����Ͳ�ѯ�Ȳ�����<br>ͬʱ��Eureka ServerҲΪ�����ṩ�˿��ӻ��ļ��ҳ�棬����ֱ�۵ؿ�������Eureka Server��ǰ������״̬��������ע�����������</p>
+<p>����˵ĸ��Ŀ�����Ҫ2���Ӳ��ܴ��������пͻ��ˣ�����ԭ��û�н��ܡ�������ΪEureka�����������һ���ӳ���ɵġ�</p>
+<p>Eureka Server��ע���б����л��棬Ĭ��ʱ��Ϊ30s��<br>Eureka Client�Ի�ȡ����ע����Ϣ���л��棬Ĭ��ʱ��Ϊ30s��<br>Ribbon��������ᵽ��Eureka Client��ȡ�����б��������ؾ����Ľ������30s<br>���������Spring Cloud������ʹ����Щ���(Eureka, Ribbon)�����������󲢲���������Eurekaע�ᣬ������Ҫ�ȵ���һ�η�����������ʱ�Ż�ע�ᡣ��������ķ��ͼ��Ĭ����30s��<br>Spring Cloud�Դ������޸ģ����������������ע�ᡣ</p>
+<h2 id="������o˸��ؾ��⡪��Ribbon"><a href="#������o˸��ؾ��⡪��Ribbon" class="headerlink" title="������ö˸��ؾ��⡪��Ribbon"></a>������ö˸��ؾ��⡪��Ribbon</h2><p>Ribbon��Netflix�����Ŀ�Դ��Ŀ����Ҫ������ΪREST�ͻ���ʵ�ָ��ؾ��⡣����Ҫ�����������<br>ServerList�����ؾ���ʹ�õķ������б�������б��Ỻ���ڸ��ؾ������У������ڸ��¡���Ribbon��Eureka���ʹ��ʱ��ServerList��ʵ�������DiscoveryEnabledNIWSServerList�����ᱣ��Eureka Server��ע��ķ���ʵ������<br>ServerListFilter���������б�������������һ���ӿڣ���Ҫ���ڶ�Service Consumer��ȡ���ķ������б�����Ԥ���ˣ����˵Ľ��Ҳ��ServerList��Ribbon�ṩ�˶��ֹ�������ʵ�֡�<br>IPing��̽�����ʵ���Ƿ���Ĳ��ԡ�<br>IRule�����ؾ�����ԣ���ʵ��������Ĳ��԰�������ѯ�������������Ӧʱ���Ȩ�ȣ�����ṹ����ͼ��ʾ��<br>ILoadBalancer�����ؾ���������Ҳ��һ���ӿڣ�RibbonΪ���ṩ�˶��ʵ�֣�����ZoneAwareLoadBalancer�����ϲ����ͨ��������API���з�����õĸ��ؾ���ѡ��һ��ILoadBalancer��ʵ�����л�����һ��IRule��<br>RestClient�����������������˼�壬����Ǹ��ؾ����Ribbon��Service Provider����REST����Ĺ��ߡ�</p>
+<h2 id="������o��۶ϡ���Hystrix"><a href="#������o��۶ϡ���Hystrix" class="headerlink" title="������ö��۶ϡ���Hystrix"></a>������ö��۶ϡ���Hystrix</h2><p>Netflix������һ����ΪHystrix�Ŀ�,ʵ���˶�·����ģʽ������·����������һ�ֿ���װ�ã���ĳ������Ԫ��������֮��ͨ����·���Ĺ��ϼ�أ������۶ϱ���˿����<br>����÷�����һ������Ԥ�ڵġ��ɴ����ı�ѡ��Ӧ��FallBack���������ǳ�ʱ��ĵȴ������׳����÷��޷��������쳣�������ͱ�֤�˷�����÷����̲߳��ᱻ��ʱ�䡢����Ҫ��ռ��<br>���Ӷ������˹����ڷֲ�ʽϵͳ�е����ӣ�����ѩ����</p>
+<h2 id="������o˴������ͷ�װ����Feign"><a href="#������o˴������ͷ�װ����Feign" class="headerlink" title="������ö˴������ͷ�װ����Feign"></a>������ö˴������ͷ�װ����Feign</h2><p>Feign��һ������ʽ��Web Service�ͻ��ˣ�����Ŀ�ľ�����Web Service���ø��Ӽ򵥡���������Ribbon��Hystrix���Ӷ������ǲ�����Ҫ��ʽ��ʹ�������������Feign���ṩ��HTTP�����ģ�壬ͨ����д�򵥵ĽӿںͲ���ע�⣬���ǾͿ��Զ����HTTP����Ĳ�������ʽ����ַ����Ϣ����������Feign����ȫ����HTTP����������ֻ��Ҫ����÷���һ���������Ϳ�����ɷ�������</p>
+<p>Feign�����������ԣ�</p>
+<p>�ɲ�ε�ע��֧�֣�����Feignע���JAX-RSע��<br>֧�ֿɲ�ε�HTTP�������ͽ�����<br>֧��Hystrix������Fallback<br>֧��Ribbon�ĸ��ؾ���<br>֧��HTTP�������Ӧ��ѹ��<br>������һ��Feign�ļ�ʾ����</p>
+<p>@SpringBootApplication<br>@EnableDiscoveryClient //����Feign<br>@EnableFeignClients<br>public class Application<br>{<br>    public static void main(String[] args)<br>    {<br>        SpringApplication.run(Application.class, args);<br>    }<br>}</p>
+<p>@FeignClient(name = “elements”, fallback = ElementsFallback.class) //ָ��feign���õķ����Hystrix Fallback��name��eureka��application name��<br>public interface Elements<br>{<br>    @RequestMapping(value = “/index”)<br>    String index();<br>}</p>
+<p>//Hystrix Fallback<br>@Component<br>public class ElementsFallback implements Elements<br>{<br>    @Override<br>    public String index()<br>    {<br>        return “<strong><strong><strong>**</strong></strong></strong>“;<br>    }<br>}</p>
+<p>//������<br>@Component<br>public class TestController {<br>    @Autowired<br>    Elements elements;</p>
+<pre><code>@RequestMapping(value = &quot;/testEureka&quot;, method = RequestMethod.GET)
+public String testeureka()
+{
+     return elements.index();
+}</code></pre><p>}</p>

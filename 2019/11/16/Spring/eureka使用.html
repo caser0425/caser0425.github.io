@@ -1,0 +1,14 @@
+<p>Eureka Server�������ע�����ģ�����ά��ע��ķ����б���<br>Service Provider�������ṩ������Ϊһ��Eureka Client����Eureka Server������ע�ᡢ��Լ�����ߵȲ�����ע�����Ҫ���ݰ���������������ip���˿ںš������ȵȡ�<br>Service Consumer���������ѷ�����Ϊһ��Eureka Client����Eureka Server��ȡService Provider��ע����Ϣ����ͨ��Զ�̵�����Service Provider����ͨ�š�</p>
+<p>Eureka Server����</p>
+<p>Service Provider����<br>1�½�һ��Spring Boot���̣�New Module���Spring Cloud Discovery -&gt; Eureka Discobery Client,��������Maven������<br>dependencies&gt;<br>        <dependency><br>            <groupId>org.springframework.cloud</groupId><br>            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId><br>        </dependency><br>2����application.properties</p>
+<p>#Service Provider����Ķ˿ں�<br>server.port=2222</p>
+<p>#Service Providerע���name��Ψһ��ʶ<br>spring.application.name=service-provider</p>
+<p>#ָ��ע���Eureka Server��ַ<br>eureka.client.serviceUrl.defaultZone=<a href="http://cluster2:8080/eureka/,http://cluster3:9090/eureka/">http://cluster2:8080/eureka/,http://cluster3:9090/eureka/</a><br>3����һ��IndexController�࣬�ṩһ������SpringMVC��Rest�ӿڣ�<br>@RestController<br>public class IndexController {</p>
+<pre><code>@RequestMapping(&quot;/index&quot;)
+public String index(){
+    return &quot;This is ServerProvider&quot;;
+}</code></pre><p>}<br>4���������ϼ���@EnableDiscoveryClientע��<br>@EnableDiscoveryClient<br>@SpringBootApplication<br>public class ServiceproviderApplication {</p>
+<pre><code>public static void main(String[] args) {
+    SpringApplication.run(ServiceproviderApplication.class, args);
+}</code></pre><p>}</p>
+<p>Service Consumer����<br>����Ҫ��֤Eureka Server�������У�Service Provider�������У���ע�ᵽEureka Server�ϡ�������Ҫ����Spring Cloud Feign�ͻ������á�</p>

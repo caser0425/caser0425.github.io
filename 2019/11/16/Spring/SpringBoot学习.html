@@ -1,0 +1,40 @@
+<p>1.Springboot��controller�ļ�������application�У���Ȼ�޷��ҵ���������ʹ��@ComponentScanע��ָ������ļ��ذ���@Beanע������ʼ�����<br>2.YAML����<br>environments:<br>    dev:<br>        url: <a href="http://dev.bar.com">http://dev.bar.com</a><br>        name: Developer Setup<br>    prod:<br>        url: <a href="http://foo.bar.com">http://foo.bar.com</a><br>        name: My Cool App<br>�ȼ۵�properties����<br>environments.dev.url=<a href="http://dev.bar.com">http://dev.bar.com</a><br>environments.dev.name=Developer Setup<br>environments.prod.url=<a href="http://foo.bar.com">http://foo.bar.com</a><br>environments.prod.name=My Cool App<br>ͨ��YAML�����÷�ʽ�����ǿ��Կ���������Ϣ���ý��ݻ������ķ�ʽ����ṹ�Եø�Ϊ�����׶���ͬʱ�������ݵ��ַ���Ҳ�õ������ļ��١�<br>����֮�⣬YAML��������һ�������ļ���ͨ��ʹ��spring.profiles��������������ͬ�Ļ������á�������������ݣ���ָ��Ϊtest����ʱ��server.port��ʹ��8882�˿ڣ�<br>����prod������server.port��ʹ��8883�˿ڣ����û��ָ��������server.port��ʹ��8881�˿ڡ�</p>
+<p>server:<br>    port: 8881</p>
+<hr>
+<p>spring:<br>    profiles: test<br>server:<br>    port: 8882</p>
+<hr>
+<p>spring:<br>    profiles: prod<br>server:<br>    port: 8883<br>ע�⣺YAMLĿǰ����һЩ���㣬���޷�ͨ��@PropertySourceע�����������á����ǣ�YAML�������Ե��ڴ��б����ʱ��������ģ����Ե������ļ��е���Ϣ��Ҫ�߱�˳����ʱ��<br>YAML�����÷�ʽ����properties�����ļ���������#��</p>
+<h1 id="�Զ������"><a href="#�Զ������" class="headerlink" title="�Զ������"></a>�Զ������</h1><h2 id="application-properties�����ӣ�"><a href="#application-properties�����ӣ�" class="headerlink" title="application.properties�����ӣ�"></a>application.properties�����ӣ�</h2><p>book.name=SpringCloudInAction<br>book.author=ZhaiYongchao</p>
+<p>Ȼ����Ӧ�������ǿ���ͨ��@Valueע����������Щ�Զ���Ĳ��������磺</p>
+<p>@Component<br>public class Book {</p>
+<pre><code>@Value(&quot;${book.name}&quot;)
+private String name;
+@Value(&quot;${book.author}&quot;)
+private String author;
+
+// ʡ��getter��setter</code></pre><p>}</p>
+<p>@Valueע���������ֵ��ʱ�����֧�����ֱ���ʽ���������ã�</p>
+<p>һ��������������ܵ�PlaceHolder��ʽ����ʽΪ ${…}����������ΪPlaceHolder<br>���⻹����ʹ��SpEL����ʽ��Spring Expression Language���� ��ʽΪ #{…}����������ΪSpEL����ʽ</p>
+<h1 id="RESTful-API"><a href="#RESTful-API" class="headerlink" title="RESTful API"></a>RESTful API</h1><p>@Controller������class��������������http����Ķ���<br>@RestController��Spring4֮������ע�⣬ԭ����@Controller�з���json��Ҫ@ResponseBody����ϣ����ֱ����@RestController���@Controller�Ͳ���Ҫ������@ResponseBody��Ĭ�Ϸ���json��ʽ<br>@RequestMapping������urlӳ�䡣���ڸ����Ҳ��ֱ������Http Methodֱ�ӹ�����ӳ��ע�������壬���磺GetMapping��PostMapping��DeleteMapping��PutMapping��</p>
+<p>ʹ��@Dataע�����ʵ���ڱ������Զ�����set��get������Ч������ע����lombok�ṩ�ģ�ֻ��Ҫ��pom�������������������Ϳ���֧�֣�</p>
+<p>ʹ��Swagger2����ǿ���API�ĵ�<br>��һ��������swagger-spring-boot-starter����</p>
+<p>��pom.xml�м����������������£�</p>
+<dependency>
+    <groupId>com.spring4all</groupId>
+    <artifactId>swagger-spring-boot-starter</artifactId>
+    <version>1.9.0.RELEASE</version>
+</dependency>
+�ڶ�����Ӧ������������@EnableSwagger2Doc
+��������application.properties�������ĵ�������ݣ�����
+
+<p>swagger.title=spring-boot-starter-swagger<br>swagger.description=Starter for swagger 2.x<br>swagger.version=1.4.0.RELEASE<br>swagger.license=Apache License, Version 2.0<br>swagger.licenseUrl=<a href="https://www.apache.org/licenses/LICENSE-2.0.html">https://www.apache.org/licenses/LICENSE-2.0.html</a><br>swagger.termsOfServiceUrl=<a href="https://github.com/dyc87112/spring-boot-starter-swagger">https://github.com/dyc87112/spring-boot-starter-swagger</a><br>swagger.contact.name=didi<br>swagger.contact.url=<a href="http://blog.didispace.com">http://blog.didispace.com</a><br>swagger.contact.email=dyc87112@qq.com<br>swagger.base-package=com.didispace<br>swagger.base-path=/**<br>���������ú������£�</p>
+<p>swagger.title������<br>swagger.description������<br>swagger.version���汾<br>swagger.license������֤<br>swagger.licenseUrl������֤URL<br>swagger.termsOfServiceUrl����������URL<br>swagger.contact.name��ά����<br>swagger.contact.url��ά����URL<br>swagger.contact.email��ά����email<br>swagger.base-package��swaggerɨ��Ļ�������Ĭ�ϣ�ȫɨ��<br>swagger.base-path����Ҫ�����Ļ���URL����Ĭ�ϣ�/**</p>
+<p>�����ĵ�����<br>��������Swagger֮����<a href="http://localhost:8080/swagger-ui.htmlҳ���п��Կ��������ڸ����ӿڵ�����������Ӣ�Ļ���ѭ���붨������Ʋ����ġ���Щ���ݶ��û������Ѻã�����������Ҫ�Լ�����һЩ˵�����ḻ�ĵ����ݡ�">http://localhost:8080/swagger-ui.htmlҳ���п��Կ��������ڸ����ӿڵ�����������Ӣ�Ļ���ѭ���붨������Ʋ����ġ���Щ���ݶ��û������Ѻã�����������Ҫ�Լ�����һЩ˵�����ḻ�ĵ����ݡ�</a><br>������ʾ������ͨ��@Api��@ApiOperationע������API����˵����ͨ��@ApiImplicitParam��@ApiModel��@ApiModelPropertyע��������������˵����</p>
+<p>Spring Boot����WebӦ��<br>��̬��Դ����<br>�����ǿ���WebӦ�õ�ʱ����Ҫ���ô�����js��css��ͼƬ�Ⱦ�̬��Դ��</p>
+<p>Ĭ������<br>Spring BootĬ���ṩ��̬��ԴĿ¼λ��������classpath�£�Ŀ¼����������¹���</p>
+<p>/static<br>/public<br>/resources<br>/META-INF/resources<br>���������ǿ�����src/main/resources/Ŀ¼�´���static���ڸ�λ�÷���һ��ͼƬ�ļ�����������󣬳��Է���<a href="http://localhost:8080/D.jpg��������ʾͼƬ�����óɹ���">http://localhost:8080/D.jpg��������ʾͼƬ�����óɹ���</a></p>
+<p>��ȾWebҳ��<br>��֮ǰ��ʾ���У����Ƕ���ͨ��@RestController�������������Է��ص�����Ϊjson������ô�����Ҫ��Ⱦhtmlҳ���ʱ��Ҫ���ʵ���أ�</p>
+<p>ģ������<br>�ڶ�̬HTMLʵ����Spring Boot��Ȼ��������ʤ�Σ������ṩ�˶���ģ�������Ĭ������֧�֣��������Ƽ���ģ�������£����ǿ��Ժܿ�����ֿ�����̬��վ��</p>
+<p>Spring Boot�ṩ��Ĭ�����õ�ģ��������Ҫ�����¼��֣�</p>
+<p>Thymeleaf<br>FreeMarker<br>Velocity<br>Groovy<br>Mustache<br>Spring Boot����ʹ����Щģ�����棬����ʹ��JSP����һ��Ҫʹ��JSP���޷�ʵ��Spring Boot�Ķ�������<br>����ʹ������ģ�������е��κ�һ��������Ĭ�ϵ�ģ������·��Ϊ��src/main/resources/templates����ȻҲ�����޸����·������������޸ģ����ں�����ģ����������������в�ѯ���޸ġ�</p>
+<p>Springboot �Ŀӣ�<br>1.@RequestMappingע����࣬�ڷ���ʱ��404����<br>���������������demo�У��ں���main�������У��ǻ��Զ�ע������е�·���ģ������������У���Ҫ���Ӷ���ע��βſ���ע�ᡣ<br>@ComponentScan(value = {“��İ���”}) ������ @SpringBootApplication��</p>

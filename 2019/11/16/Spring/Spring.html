@@ -1,0 +1,164 @@
+<hr>
+<p>title: Spring<br>date: 2019-11-16 13:59:37<br>tags: Springboot</p>
+<h2 id="categories-Spring"><a href="#categories-Spring" class="headerlink" title="categories: Spring"></a>categories: Spring</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>spring-boot-starter-thymeleaf</td>
+<td>使用Thymeleaf视图构建MVC Web应用程序的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-ws</td>
+<td>使用Spring Web Services的入门者。从1.4开始不推荐使用spring-boot-starter-web-services</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-couchbase</td>
+<td>使用Couchbase面向文档的数据库和Spring Data Couchbase的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-artemis</td>
+<td>使用Apache Artemis的JMS消息传递入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-web-services</td>
+<td>使用Spring Web Services的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-mail</td>
+<td>开始使用Java Mail和Spring Framework的电子邮件发送支持</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-redis</td>
+<td>使用Redis键值数据存储与Spring Data Redis和Jedis客户端的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-web</td>
+<td>使用Spring MVC构建Web（包括RESTful）应用程序的入门程序。使用Tomcat作为默认的嵌入式容器</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-gemfire</td>
+<td>使用GemFire分布式数据存储和Spring Data GemFire的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-activemq</td>
+<td>使用Apache ActiveMQ的JMS消息传递入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-elasticsearch</td>
+<td>使用Elasticsearch搜索和分析引擎以及Spring Data Elasticsearch的入门者</td>
+</tr>
+<tr>
+<td>spring-boot-starter-integration</td>
+<td>使用Spring Integration的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-test</td>
+<td>用于使用包括JUnit，Hamcrest和Mockito在内的库测试Spring Boot应用程序的入门程序</td>
+</tr>
+<tr>
+<td>spring-boot-starter-hornetq</td>
+<td>使用HornetQ的JMS消息传递入门。从1.4开始不推荐使用spring-boot-starter-artemis</td>
+</tr>
+<tr>
+<td>spring-boot-starter-jdbc</td>
+<td>结合使用JDBC和Tomcat JDBC连接池的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-mobile</td>
+<td>使用Spring Mobile构建Web应用程序的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-validation</td>
+<td>通过Hibernate Validator使用Java Bean验证的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-hateoas</td>
+<td>使用Spring MVC和Spring HATEOAS构建基于超媒体的RESTful Web应用程序的入门者</td>
+</tr>
+<tr>
+<td>spring-boot-starter-jersey</td>
+<td>使用JAX-RS和Jersey构建RESTful Web应用程序的入门。的替代品spring-boot-starter-web</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-neo4j</td>
+<td>使用Neo4j图形数据库和Spring Data Neo4j的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-websocket</td>
+<td>使用Spring Framework的WebSocket支持构建WebSocket应用程序的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-aop</td>
+<td>使用Spring AOP和AspectJ进行面向方面编程的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-amqp</td>
+<td>使用Spring AMQP和Rabbit MQ的入门</td>
+</tr>
+<tr>
+<td>spring-boot-starter-data-cassandra</td>
+<td>使用Cassandra分布式数据库和Spring Data Cassandra的入门者</td>
+</tr>
+<tr>
+<td>spring-boot-starter-social-facebook</td>
+<td>初学者使用Spring Social Facebook</td>
+</tr>
+<tr>
+<td>spring-boot-starter-jta-atomikos</td>
+<td>使用Atomikos的JTA交易入门</td>
+</tr>
+</tbody></table>
+<p><strong>更多的在官方文档查看</strong></p>
+<h1 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h1><p>@SpringBootApplication 是 Spring Boot 的核心注解，它是一个组合注解，该注解组合了：@Configuration、@EnableAutoConfiguration、@ComponentScan； 若不是用 @SpringBootApplication 注解也可以使用这三个注解代替。</p>
+<p>其中，@EnableAutoConfiguration 让 Spring Boot 根据类路径中的 jar 包依赖为当前项目进行自动配置，例如，添加了 spring-boot-starter-web 依赖，会自动添加 Tomcat 和 Spring MVC 的依赖，那么 Spring Boot 会对 Tomcat 和 Spring MVC 进行自动配置。<br>Spring Boot 还会自动扫描 @SpringBootApplication 所在类的同级包以及下级包里的 Bean ，所以入口类建议就配置在 grounpID + arctifactID 组合的包名下</p>
+<h2 id="1-pom-xml配置"><a href="#1-pom-xml配置" class="headerlink" title="1.pom.xml配置"></a>1.pom.xml配置</h2><h2 id="2-Controller层"><a href="#2-Controller层" class="headerlink" title="2.Controller层"></a>2.Controller层</h2><pre><code class="java"><span class="meta">@RestController</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span> </span>{
+
+    <span class="meta">@RequestMapping</span>(<span class="string">"/"</span>)
+    <span class="function"><span class="keyword">public</span> String <span class="title">sayHello</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> <span class="string">"Hello,World!"</span>;
+    }
+}</code></pre>
+<p> @RestController和@RequestMapping注解是来自SpringMVC的注解，它们不是SpringBoot的特定部分。 </p>
+<ol>
+<li>@RestController：提供实现了REST API，可以服务JSON,XML或者其他。这里是以String的形式渲染出结果</li>
+<li>@RequestMapping：提供路由信息，”/“路径的HTTP Request都会被映射到sayHello方法进行处理。 </li>
+</ol>
+<h2 id="3-启动应用类"><a href="#3-启动应用类" class="headerlink" title="3.启动应用类"></a>3.启动应用类</h2><pre><code class="java"><span class="meta">@SpringBootApplication</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>{
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+        SpringApplication.run(Application.class,args);
+    }
+}</code></pre>
+<ol>
+<li>@SpringBootApplication：Spring Boot 应用的标识 </li>
+<li>Application很简单，一个main函数作为主入口。SpringApplication引导应用，并将Application本身作为参数传递给run方法。具体run方法会启动嵌入式的Tomcat并初始化Spring环境及其各Spring组件。  </li>
+</ol>
+<h2 id="自定义属性与加载"><a href="#自定义属性与加载" class="headerlink" title="自定义属性与加载"></a>自定义属性与加载</h2><p>通过<code>@Value(&quot;${属性名}&quot;)</code>注解来加载对应的配置属性，具体如下：</p>
+<pre><code class="java"><span class="meta">@Component</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BlogProperties</span> </span>{
+
+    <span class="meta">@Value</span>(<span class="string">"${com.didispace.blog.name}"</span>)
+    <span class="keyword">private</span> String name;
+    <span class="meta">@Value</span>(<span class="string">"${com.didispace.blog.title}"</span>)
+    <span class="keyword">private</span> String title;
+
+    <span class="comment">// 省略getter和setter</span>
+
+}</code></pre>
+<h2 id="使用随机数"><a href="#使用随机数" class="headerlink" title="使用随机数"></a>使用随机数</h2><p>在一些情况下，有些参数我们需要希望它不是一个固定的值，比如密钥、服务端口等。Spring Boot的属性配置文件中可以通过<code>${random}</code>来产生int值、long值或者string字符串，来支持属性的随机值。</p>
+<pre><code class="bash"><span class="comment"># 随机字符串</span>
+com.didispace.blog.value=<span class="variable">${random.value}</span>
+<span class="comment"># 随机int</span>
+com.didispace.blog.number=<span class="variable">${random.int}</span>
+<span class="comment"># 随机long</span>
+com.didispace.blog.bignumber=<span class="variable">${random.long}</span>
+<span class="comment"># 10以内的随机数</span>
+com.didispace.blog.test1=<span class="variable">${random.int(10)}</span>
+<span class="comment"># 10-20的随机数</span>
+com.didispace.blog.test2=<span class="variable">${random.int[10,20]}</span></code></pre>

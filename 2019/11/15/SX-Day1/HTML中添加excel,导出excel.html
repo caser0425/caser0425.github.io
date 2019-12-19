@@ -1,0 +1,52 @@
+<h1 id="添加excel-导出excel"><a href="#添加excel-导出excel" class="headerlink" title="添加excel,导出excel"></a>添加excel,导出excel</h1><pre><code class="html"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">class</span>=<span class="string">"file glyphicon glyphicon-save"</span> <span class="attr">xlsxtemplate</span>=<span class="string">"#xlsxTableTemplate"</span>&gt;</span>导出Excel模板<span class="tag">&lt;/<span class="name">a</span>&gt;</span>
+<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">class</span>=<span class="string">"file glyphicon glyphicon-open"</span>&gt;</span>从Excel导入<span class="tag">&lt;<span class="name">input</span> <span class="attr">accept</span>=<span class="string">".xlsx,.xls"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">fillform</span>=<span class="string">"content-form"</span> <span class="attr">template</span>=<span class="string">"form-template"</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></code></pre>
+<pre><code class="php+HTML">&lt;a href=&quot;javascript:;&quot; class=&quot;file glyphicon glyphicon-open&quot;&gt;从Excel导入&lt;input accept=&quot;.xlsx,.xls&quot; type=&quot;file&quot; fillform=&quot;content-form&quot; template=&quot;form-template&quot; fields=&quot;saleName,saleAddr,saleContact,saleTel,saleFax,saleEmail&quot;/&gt;&lt;/a&gt;</code></pre>
+<p>其中需要修改三个属性：</p>
+<p>xlsxtemplate：用于生成”导出excel模板“的table，见第二条说明</p>
+<p>fillform：生成表格需要填充到的地方（一般页面已经有，直接使用）</p>
+<p>template：生成表格用的模板（一般页面已经有，直接使用</p>
+<h1 id="页面增加导出模板"><a href="#页面增加导出模板" class="headerlink" title="页面增加导出模板"></a>页面增加导出模板</h1><pre><code class="html"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">"xlsxTableTemplate"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span> &gt;</span>有效成分<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span> &gt;</span>其他成分<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"4"</span> &gt;</span>适用范围<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"3"</span>&gt;</span>申请人信息（不超过4个）<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">tr</span> &gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>有效成分<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>含量<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>其他成分<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>含量<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>适用范围<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>在配合饲料或全混合日粮中的推荐添加量<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>在配合饲料或全混合日粮中的最高限量<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>使用注意事项<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>单位名称<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>通讯地址<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">td</span> &gt;</span>性质（生产企业/研制者）<span class="tag">&lt;/<span class="name">td</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">table</span>&gt;</span></code></pre>
+<p><strong>fields用来一对一对应输入的值</strong></p>
+<pre><code class="html">fields="ingredient,promiseValue,description,testMethod,testMethod2"
+定位按钮-&gt;检查</code></pre>
+<h1 id="页面js引用xlsxForm"><a href="#页面js引用xlsxForm" class="headerlink" title="页面js引用xlsxForm"></a>页面js引用xlsxForm</h1><pre><code class="js">(<span class="function"><span class="keyword">function</span> (<span class="params">factory</span>) </span>{
+    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> &amp;&amp; define.amd) {
+        <span class="keyword">var</span> scripts = [<span class="string">'jquery'</span>,<span class="string">'Handlebars'</span>,<span class="string">'bootstrap'</span>,<span class="string">'childTab'</span>,<span class="string">'eScroller'</span>,<span class="string">'tjAlert'</span>,<span class="string">'xlsxForm'</span>];
+        define(scripts, factory);
+    } <span class="keyword">else</span> {
+        factory(jQuery,Handlebars);
+    }</code></pre>
+<h2 id="添加备注"><a href="#添加备注" class="headerlink" title="添加备注"></a>添加备注</h2><pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modal fade"</span> <span class="attr">id</span>=<span class="string">"loading"</span> <span class="attr">tabindex</span>=<span class="string">"-1"</span> <span class="attr">role</span>=<span class="string">"dialog"</span> <span class="attr">aria-labelledby</span>=<span class="string">"myModalLabel"</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../../../image/loading.gif"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"position: absolute;top: 0;left: 0;right: 0;left: 0;bottom: 0;margin: auto"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">"header smaller lighter red"</span>&gt;</span>
+   <span class="tag">&lt;<span class="name">p</span>&gt;</span> 注：表中所有内容均为必填项目，对于“商品名称”、“在配合饲料或全混合日粮中的最高限量”、“使用注意事项”、“其他成分”、“在配合饲料中的监测方法”等相关栏目，若无相关内容，应填写“——”。<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">h4</span>&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"model fade"</span> <span class="attr">id</span>=<span class="string">""</span>&gt;</span>注：表中所有内容均为必填项目，对于“商品名称”、“在配合饲料或全混合日粮中的最高限量”、“使用注意事项”、“其他成分”、“在配合饲料中的监测方法”等相关栏目，若无相关内容，应填写“——”。<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+<h1 id="svn提交"><a href="#svn提交" class="headerlink" title="svn提交"></a>svn提交</h1><p>选中自己的代码右键svn</p>
+<p>commit changes</p>
+<p>选中改了的代码</p>
+<p>commit提交</p>
+<p> netstat -tunlp|grep {port} </p>
+<p> .netstat -nao | findstr 8019 </p>
